@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Configuration;
 
 namespace thisone
 {
@@ -11,12 +12,14 @@ namespace thisone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            input1.Text = "Hello appt164";
+            input1.Text = "Hello appt164"; 
         }
 
         protected void doBtn_Click(object sender, EventArgs e)
         {
-            input1.Text = "Clicked";
+
+            string key = ConfigurationManager.AppSettings["key"];
+            input1.Text = "Clicked" + " " + key;
         }
     }
 }
