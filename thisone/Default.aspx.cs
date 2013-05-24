@@ -11,7 +11,12 @@ namespace thisone
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            input1.Text = "Hello appt164";
+        }
 
+        protected void doBtn_Click(object sender, EventArgs e)
+        {
+            input1.Text = "Clicked";
         }
     }
 }
