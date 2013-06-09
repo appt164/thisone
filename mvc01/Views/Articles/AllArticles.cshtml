@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "AllArticles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<BL.Objects.Article>
+
+<h2>AllArticles</h2>
+
+<ul>
+@foreach (var item in Model) {
+    
+    <li>@Html.DisplayFor(modelItem => item.name)</li>
+                
+}
+</ul>
