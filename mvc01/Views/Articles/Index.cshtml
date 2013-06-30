@@ -29,14 +29,17 @@
         switch (prio) {
             case 1:
                 $("#artLine_" + id).css("color", "#016011");
+                $("#artLine_" + id).css("border-bottom", "1px solid #016011");
                 $("#artLine_" + id).css("backgroundColor", "#B6FFA8");
                 break;
             case 2:
                 $("#artLine_" + id).css("color", "#A58C1A");
+                $("#artLine_" + id).css("border-bottom", "1px solid #A58C1A");
                 $("#artLine_" + id).css("backgroundColor", "#F9FFA8");
                 break;
             case 3:
                 $("#artLine_" + id).css("color", "#E02323");
+                $("#artLine_" + id).css("border-bottom", "1px solid #E02323");
                 $("#artLine_" + id).css("backgroundColor", "#E2BABA");
                 break;
         }
@@ -44,7 +47,7 @@
 
 </script>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nouvel article", "Create")
 </p>
 <table>
     <tr>
@@ -193,7 +196,7 @@
 @foreach (var item in Model)
 {
     <tr id="artLine_@item.ArticleID">
-        <td style ="width:100px;padding-left:5px;">
+        <td style ="width:130px;padding-left:5px;">
             @Html.DisplayFor(modelItem => item.name)
         </td>
         <td style ="width:280px">
