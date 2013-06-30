@@ -11,6 +11,7 @@
     background-color:red;
     float:left;
     margin-right: 12px;
+    border: 1px solid black;
 }
 
 .orangeCircle
@@ -20,6 +21,7 @@
     background-color:orange;
     float:left;
     margin-right: 12px;
+    border: 1px solid black;
 }
 
 .greenCircle
@@ -29,6 +31,7 @@
     background-color:green;
     float:left;
     margin-right: 12px;
+    border: 1px solid black;
 }
 
 body {
