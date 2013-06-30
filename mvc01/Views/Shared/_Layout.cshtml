@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <title>@ViewBag.Title - Appt 164</title>
+        <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+        <script src="@Url.Content("~/Scripts/jquery-ui-1.8.20.min.js")" type="text/javascript"></script>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
@@ -12,7 +14,7 @@
         <header>
             <div class="content-wrapper">
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                    <p class="site-title">@Html.ActionLink("Appt164", "Index", "Home")</p>
                 </div>
                 <div class="float-right">
                     <section id="login">
@@ -20,10 +22,9 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li>@Html.ActionLink("Liste des articles","AllArticles","Articles")</li>
+                            <li>@Html.ActionLink("Articles","Index","Articles")</li>
+                            <li>@Html.ActionLink("Catégories","Index","ArticleCategory")</li>
+                            <li>@Html.ActionLink("Listes","Index","Need")</li>
                         </ul>
                     </nav>
                 </div>

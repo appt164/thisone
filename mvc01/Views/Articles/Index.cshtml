@@ -1,0 +1,108 @@
+﻿@model IEnumerable<DTO.EntityArticle>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+    });
+
+    function SetPriority(prio, id) {
+
+        SetColors(prio, id);
+        SetPriorityAjax(prio, id);
+    }
+    function SetPriorityAjax(prio, id) {
+        $.ajax({
+            type: "GET",
+            url: "Articles/UpdatePriority",
+            data: "ID=" + id + "&prio=" + prio,
+            success: function (data) {
+
+            }
+        });
+    }
+
+    function SetColors(prio, id) {
+        switch (prio) {
+            case 1:
+                $("#artLine_" + id).css("color", "#016011");
+                $("#artLine_" + id).css("backgroundColor", "#B6FFA8");
+                break;
+            case 2:
+                $("#artLine_" + id).css("color", "#A58C1A");
+                $("#artLine_" + id).css("backgroundColor", "#F9FFA8");
+                break;
+            case 3:
+                $("#artLine_" + id).css("color", "#E02323");
+                $("#artLine_" + id).css("backgroundColor", "#E2BABA");
+                break;
+        }
+    }
+
+</script>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.priority)
+        </th>
+        <th>
+        </th>
+        <th>
+            Set
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr id="artLine_@item.ArticleID">
+        <td style ="width:100px">
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td style ="width:280px">
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td style ="width:100px">
+            @Html.DisplayFor(modelItem => item.Category.name)
+        </td>
+        <td style ="width:100px">
+            @Html.DisplayFor(modelItem => item.priority)
+        </td>
+        <td>
+            @Html.ActionLink("Delete", "Delete", new
+            {
+                id = item.ArticleID
+            })
+        </td>
+        <td>
+            <a onclick="javascript:SetPriority(1,@item.ArticleID)">1</a>
+            <a onclick="javascript:SetPriority(2,@item.ArticleID)">2</a>
+            <a onclick="javascript:SetPriority(3,@item.ArticleID)">3</a>
+
+        </td>
+    </tr>
+    <script type="text/javascript">
+        SetColors(@item.priority, @item.ArticleID);
+    </script>
+}
+
+</table>
+
+
+
