@@ -84,10 +84,16 @@
             <div class="redCircle" onclick="javascript:SetPriority(3,@item.ArticleID)"></div>
         </td>
         <td style ="width:100px">
-            @Html.ActionLink("Delete", "Delete", new
-            {
-                id = item.ArticleID
-            })
+            <div style="float:right">
+                @Html.ActionLink(
+                    " ",
+                 "Delete",
+                 "Delete", 
+                    new {
+                        style = "background: url('" + Url.Content("~/Images/trash.png") + "') no-repeat center right; display:block; height:20px; width:20px;" 
+                    }
+            )
+            </div>
         </td>
     </tr>
     <script type="text/javascript">
