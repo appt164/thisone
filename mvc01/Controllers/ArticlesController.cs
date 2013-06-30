@@ -17,9 +17,42 @@ namespace mvc01.Controllers
         public ActionResult Index(string orderBy)
         {
             ArticleProvider articleProvider = new ArticleProvider();
-
             List<EntityArticle> articles = articleProvider.GetAllArticles();
-            return View(articles.OrderBy(x => x.CategoryID).OrderByDescending(x => x.priority).ToList());
+            switch (orderBy)
+            {
+                case "nameDesc":
+                    articles = articles.OrderBy(x => x.CategoryID).OrderByDescending(x => x.name).ToList();
+                    break;
+                case "nameAsc":
+                    articles = articles.OrderBy(x => x.CategoryID).OrderBy(x => x.name).ToList();
+                    break;
+
+                case "descDesc":
+                    articles = articles.OrderBy(x => x.CategoryID).OrderByDescending(x => x.description).ToList();
+                    break;
+                case "descAsc":
+                    articles = articles.OrderBy(x => x.CategoryID).OrderBy(x => x.description).ToList();
+                    break;
+
+                case "categoryDesc":
+                    articles = articles.OrderBy(x => x.Category.name).ToList();
+                    break;
+                case "categoryAsc":
+                    articles = articles.OrderByDescending(x => x.Category.name).ToList();
+                    break;
+
+                case "priorityDesc":
+                    articles = articles.OrderBy(x => x.CategoryID).OrderByDescending(x => x.priority).ToList();
+                    break;
+                case "priorityAsc":
+                    articles = articles.OrderBy(x => x.CategoryID).OrderBy(x => x.priority).ToList();
+                    break;
+                default:
+                    articles = articles.OrderBy(x => x.CategoryID).OrderByDescending(x => x.priority).ToList();
+                    break;
+            }
+
+            return View(articles);
         }
 
 
