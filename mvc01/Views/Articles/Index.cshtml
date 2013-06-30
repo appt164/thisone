@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<DTO.EntityArticle>
 
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script type="text/javascript">
@@ -44,8 +43,6 @@
     }
 
 </script>
-<h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -69,7 +66,7 @@
 
 @foreach (var item in Model) {
     <tr id="artLine_@item.ArticleID">
-        <td style ="width:100px">
+        <td style ="width:100px;padding-left:5px;">
             @Html.DisplayFor(modelItem => item.name)
         </td>
         <td style ="width:280px">
