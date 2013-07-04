@@ -137,7 +137,17 @@
 
         @foreach (var item in Model)
         {
-            <div id="@item.PieceID" style="left:@(item.PosX)px;top:@(item.PosY)px;" class="piece">@item.Type  dqd @item.Number </div>
+            string color = string.Empty;
+            switch (item.Color)
+            {
+                case 0:
+                    color = "blanc";
+                    break;
+                case 1:
+                    color = "noir";
+                    break;
+            }
+            <div id="@item.PieceID" style="left:@(item.PosX)px;top:@(item.PosY)px;" class="piece">@item.Type - @item.Number - @color </div>
         }
 
     </div>
