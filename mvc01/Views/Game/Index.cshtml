@@ -20,7 +20,7 @@
                 var Stoppos = $(this).position();
                 var id = $(this).attr("id");
                 $(this).fadeTo(200, 1)
-
+                //alert(Stoppos.left + " " + Stoppos.top);
                 $.ajax({
                     type: "GET",
                     url: "Game/UpdatePiece",
@@ -44,6 +44,13 @@
 
         $(".caseImpaire, .casePaire").droppable({
             drop: function (event, ui) {
+
+                var posx = $(this).attr("posX");
+                var posy = $(this).attr("posY");
+
+                ui.draggable.css("left", 8 + (posx - 1) * 100);
+                ui.draggable.css("top", 10 + (posy - 1) * 100);
+
                 $(this).fadeTo(100, 0.33);
                 $(this).fadeTo(100, 1);
                 $(this).css("border", "none");
@@ -91,77 +98,77 @@
 
     <div id="plateau">
 
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
+        <div class="caseImpaire" posx="1" posy="1"></div>
+        <div class="casePaire" posx="2" posy="1"></div>
+        <div class="caseImpaire" posx="3" posy="1""></div>
+        <div class="casePaire" posx="4" posy="1"></div>
+        <div class="caseImpaire" posx="5" posy="1"></div>
+        <div class="casePaire" posx="6" posy="1"></div>
+        <div class="caseImpaire" posx="7" posy="1"></div>
+        <div class="casePaire" posx="8" posy="1"></div>
 
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
+        <div class="casePaire" posx="1" posy="2"></div>
+        <div class="caseImpaire" posx="2" posy="2"></div>
+        <div class="casePaire" posx="3" posy="2"></div>
+        <div class="caseImpaire" posx="4" posy="2"></div>
+        <div class="casePaire" posx="5" posy="2"></div>
+        <div class="caseImpaire" posx="6" posy="2"></div>
+        <div class="casePaire" posx="7" posy="2"></div>
+        <div class="caseImpaire" posx="8" posy="2"></div>
 
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
+        <div class="caseImpaire" posx="1" posy="3"></div>
+        <div class="casePaire" posx="2" posy="3"></div>
+        <div class="caseImpaire" posx="3" posy="3""></div>
+        <div class="casePaire" posx="4" posy="3"></div>
+        <div class="caseImpaire" posx="5" posy="3"></div>
+        <div class="casePaire" posx="6" posy="3"></div>
+        <div class="caseImpaire" posx="7" posy="3"></div>
+        <div class="casePaire" posx="8" posy="3"></div>
 
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
+        <div class="casePaire" posx="1" posy="4"></div>
+        <div class="caseImpaire" posx="2" posy="4"></div>
+        <div class="casePaire" posx="3" posy="4"></div>
+        <div class="caseImpaire" posx="4" posy="4"></div>
+        <div class="casePaire" posx="5" posy="4"></div>
+        <div class="caseImpaire" posx="6" posy="4"></div>
+        <div class="casePaire" posx="7" posy="4"></div>
+        <div class="caseImpaire" posx="8" posy="4"></div>
 
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
+        <div class="caseImpaire" posx="1" posy="5"></div>
+        <div class="casePaire" posx="2" posy="5"></div>
+        <div class="caseImpaire" posx="3" posy="5""></div>
+        <div class="casePaire" posx="4" posy="5"></div>
+        <div class="caseImpaire" posx="5" posy="5"></div>
+        <div class="casePaire" posx="6" posy="5"></div>
+        <div class="caseImpaire" posx="7" posy="5"></div>
+        <div class="casePaire" posx="8" posy="5"></div>
 
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
+        <div class="casePaire" posx="1" posy="6"></div>
+        <div class="caseImpaire" posx="2" posy="6"></div>
+        <div class="casePaire" posx="3" posy="6"></div>
+        <div class="caseImpaire" posx="4" posy="6"></div>
+        <div class="casePaire" posx="5" posy="6"></div>
+        <div class="caseImpaire" posx="6" posy="6"></div>
+        <div class="casePaire" posx="7" posy="6"></div>
+        <div class="caseImpaire" posx="8" posy="6"></div>
 
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
+        <div class="caseImpaire" posx="1" posy="7"></div>
+        <div class="casePaire" posx="2" posy="7"></div>
+        <div class="caseImpaire" posx="3" posy="7""></div>
+        <div class="casePaire" posx="4" posy="7"></div>
+        <div class="caseImpaire" posx="5" posy="7"></div>
+        <div class="casePaire" posx="6" posy="7"></div>
+        <div class="caseImpaire" posx="7" posy="7"></div>
+        <div class="casePaire" posx="8" posy="7"></div>
 
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
-        <div class="casePaire"></div>
-        <div class="caseImpaire"></div>
+        <div class="casePaire" posx="1" posy="8"></div>
+        <div class="caseImpaire" posx="2" posy="8"></div>
+        <div class="casePaire" posx="3" posy="8"></div>
+        <div class="caseImpaire" posx="4" posy="8"></div>
+        <div class="casePaire" posx="5" posy="8"></div>
+        <div class="caseImpaire" posx="6" posy="8"></div>
+        <div class="casePaire" posx="7" posy="8"></div>
+        <div class="caseImpaire" posx="8" posy="8"></div>
 
         @foreach (var item in Model)
         {
