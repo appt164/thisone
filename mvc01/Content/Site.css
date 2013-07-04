@@ -782,3 +782,85 @@ tr.pager td {
             margin: 0;
         }
 }
+
+/*  Echiquier  */
+#gameWrapper
+{
+    position:relative;
+    width:853px;
+    height:853px;
+}
+
+#topLetters
+{
+    width:802px;
+    height:50px;
+    margin-left:50px;
+    line-height:50px;
+    font-weight:bold;
+}
+
+#leftNumbers
+{
+    width:50px;
+    height:802px;
+    float:left;
+    line-height:100px;
+}
+
+#plateau
+{
+    position:relative;
+    width:800px;
+    height:800px;
+    background-color:white;
+    border:1px solid black;
+    float:left;
+}
+
+.caseLetters
+{
+    position:relative;
+    width:100px;
+    height:50px;
+    background-color:#EBEBEB;
+    float:left;
+    text-align:center;
+}
+
+.caseNumbers
+{
+    position:relative;
+    width:50px;
+    height:100px;
+    background-color:#EBEBEB;
+    float:left;
+    text-align:center;
+    font-weight:bold;
+}
+
+.casePaire
+{
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color:#BDBEFF;
+    float:left;
+}
+
+.caseImpaire
+{
+    position:relative;
+    width:100px;
+    height:100px;
+    background-color:White;
+    float:left;    
+}
+
+.piece
+{
+    position:absolute;
+    width:90px;
+    height:90px;
+    border:1px solid black;
+}

@@ -1,0 +1,145 @@
+﻿@model IEnumerable<DTO.EntityPiece>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".piece").draggable({
+
+            stop: function (event, ui) {
+                var Stoppos = $(this).position();
+                var id = $(this).attr("id");
+
+                $.ajax({
+                    type: "GET",
+                    url: "Game/UpdatePiece",
+                    data: "ID=" + id + "&x=" + Stoppos.left + "&y=" + Stoppos.top,
+                    success: function (data) {
+
+                    }
+                });
+
+            }
+
+        });
+        $("#plateau").droppable({
+            drop: function (event, ui) {
+
+            }
+        });
+    });
+
+</script>
+
+
+<h2>Game</h2>
+
+<div id="gameWrapper">
+
+    <div id="topLetters">
+       <div class="caseLetters">A</div>
+       <div class="caseLetters">B</div>
+       <div class="caseLetters">C</div>
+       <div class="caseLetters">D</div>
+       <div class="caseLetters">E</div>
+       <div class="caseLetters">F</div>
+       <div class="caseLetters">G</div>
+       <div class="caseLetters">H</div>
+    </div>
+
+    <div id="leftNumbers">
+        <div class="caseNumbers">1</div>
+        <div class="caseNumbers">2</div>
+        <div class="caseNumbers">3</div>
+        <div class="caseNumbers">4</div>
+        <div class="caseNumbers">5</div>
+        <div class="caseNumbers">6</div>
+        <div class="caseNumbers">7</div>
+        <div class="caseNumbers">8</div>
+    </div>
+
+    <div id="plateau">
+
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+        <div class="casePaire"></div>
+        <div class="caseImpaire"></div>
+
+        @foreach (var item in Model)
+        {
+            <div id="@item.PieceID" style="left:@(item.PosX)px;top:@(item.PosY)px;" class="piece">@item.Type  dqd @item.Number </div>
+        }
+
+    </div>
+
+</div>
