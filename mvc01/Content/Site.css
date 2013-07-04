@@ -860,7 +860,6 @@ tr.pager td {
 .piece
 {
     position:absolute;
-    width:90px;
-    height:90px;
-    border:1px solid black;
+    width:84px;
+    height:84px;
 }

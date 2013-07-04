@@ -138,16 +138,44 @@
         @foreach (var item in Model)
         {
             string color = string.Empty;
+            string type = string.Empty;
+            
             switch (item.Color)
             {
                 case 0:
-                    color = "blanc";
+                    color = "w";
                     break;
                 case 1:
-                    color = "noir";
+                    color = "b";
                     break;
             }
-            <div id="@item.PieceID" style="left:@(item.PosX)px;top:@(item.PosY)px;" class="piece">@item.Type - @item.Number - @color </div>
+
+
+            switch (item.Type)
+            {
+                case "pion":
+                    type = "p";
+                    break;
+                case "tour":
+                    type = "r";
+                    break;
+                case "roi":
+                    type = "k";
+                    break;
+                case "dame":
+                    type = "q";
+                    break;
+                case "fou":
+                    type = "b";
+                    break;
+                case "cavalier":
+                    type = "n";
+                    break;
+            }
+
+            string image = color + type;
+            
+            <div id="@item.PieceID" style="background-image:url(/Images/chess/@(image).png);left:@(item.PosX)px;top:@(item.PosY)px;" class="piece"></div>
         }
 
     </div>
