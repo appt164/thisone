@@ -9,9 +9,17 @@
     $(document).ready(function () {
         $(".piece").draggable({
 
+
+            start: function (event, ui) {
+
+                $(this).fadeTo(200, 0.33)
+
+            },
+
             stop: function (event, ui) {
                 var Stoppos = $(this).position();
                 var id = $(this).attr("id");
+                $(this).fadeTo(200, 1)
 
                 $.ajax({
                     type: "GET",
@@ -22,13 +30,33 @@
                     }
                 });
 
-            }
+
+            },
+
+            revert: "invalid"
 
         });
         $("#plateau").droppable({
             drop: function (event, ui) {
 
             }
+        });
+
+        $(".caseImpaire, .casePaire").droppable({
+            drop: function (event, ui) {
+                $(this).fadeTo(100, 0.33);
+                $(this).fadeTo(100, 1);
+                $(this).css("border", "none");
+            },
+
+            out: function (event, ui) {
+                $(this).fadeTo(100, 1);
+            },
+
+            over: function (event, ui) {
+                $(this).fadeTo(100, 0.50);
+            }
+
         });
     });
 
