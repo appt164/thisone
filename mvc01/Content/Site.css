@@ -863,3 +863,11 @@ tr.pager td {
     width:84px;
     height:84px;
 }
+
+#trash
+{
+    width:800px;
+    height:150px;
+    border:1px black;
+    border-style:dotted;
+}
